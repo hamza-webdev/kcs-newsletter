@@ -1,0 +1,286 @@
+# Newsletter KCS - Fichiers à ignorer par Git
+
+# ===================================
+# FICHIERS SENSIBLES ET CONFIGURATION
+# ===================================
+
+# Variables d'environnement (IMPORTANT - Contiennent des clés API)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.docker
+app/.env*
+
+# Clés et certificats
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# ===================================
+# NODE.JS ET NPM
+# ===================================
+
+# Dépendances
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Fichiers de verrouillage optionnels
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Cache npm
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ===================================
+# NEXT.JS
+# ===================================
+
+# Build Next.js
+.next/
+out/
+build/
+dist/
+
+# Cache Next.js
+.next/cache/
+
+# Fichiers de télémétrie Next.js
+.next/trace
+
+# ===================================
+# BASES DE DONNÉES
+# ===================================
+
+# Fichiers de base de données locaux
+*.db
+*.sqlite
+*.sqlite3
+
+# Dumps et sauvegardes
+*.sql.backup
+*.dump
+backup.sql
+database-backup-*.sql
+
+# Logs PostgreSQL
+postgresql.log
+postgres.log
+
+# ===================================
+# DOCKER
+# ===================================
+
+# Volumes Docker persistants
+postgres_data/
+pgadmin_data/
+docker-volumes/
+
+# Logs Docker
+docker-compose.override.yml
+.docker/
+
+# ===================================
+# UPLOADS ET MÉDIAS
+# ===================================
+
+# Dossiers d'uploads
+uploads/
+public/uploads/
+app/public/uploads/
+temp-uploads/
+
+# Images générées
+generated-images/
+*.generated.png
+*.generated.jpg
+*.generated.jpeg
+
+# ===================================
+# LOGS ET TEMPORAIRES
+# ===================================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Fichiers temporaires
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# ===================================
+# IDE ET ÉDITEURS
+# ===================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===================================
+# SYSTÈME D'EXPLOITATION
+# ===================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===================================
+# TESTS ET COUVERTURE
+# ===================================
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Tests
+test-results/
+playwright-report/
+test-results.xml
+
+# ===================================
+# DÉPLOIEMENT ET PRODUCTION
+# ===================================
+
+# Fichiers de déploiement sensibles
+deploy-config.json
+production-config.json
+
+# Certificats SSL
+ssl/
+certificates/
+
+# Scripts de déploiement avec mots de passe
+deploy-with-secrets.sh
+production-deploy.sh
+
+# ===================================
+# DOCUMENTATION GÉNÉRÉE
+# ===================================
+
+# Documentation auto-générée
+docs/generated/
+api-docs/
+
+# ===================================
+# DIVERS
+# ===================================
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.old
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Fichiers de configuration locaux
+config.local.json
+settings.local.json
+
+# Fichiers de développement personnel
+TODO.md
+NOTES.md
+dev-notes.txt
+
+# ===================================
+# SPÉCIFIQUE AU PROJET NEWSLETTER KCS
+# ===================================
+
+# Emails de test sauvegardés
+test-emails/
+email-templates-backup/
+
+# Images de newsletter générées localement
+newsletter-images-cache/
+openai-generated/
+
+# Données de test
+test-data/
+mock-data/
+sample-newsletters/
+
+# Scripts personnels
+my-scripts/
+personal-tools/
+
+# Configuration serveur locale
+server-config.local.json
+nginx.local.conf

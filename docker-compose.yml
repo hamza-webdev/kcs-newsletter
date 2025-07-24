@@ -1,6 +1,51 @@
 version: '3.8'
 
 services:
+  # Application Next.js Newsletter KCS
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: newsletter-app
+    environment:
+      # Base de données
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: newsletter_kcs
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+
+      # OpenAI (à configurer avec votre vraie clé)
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-your-openai-api-key-here}
+
+      # Email (MailHog pour les tests)
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
+      SMTP_USER: ""
+      SMTP_PASSWORD: ""
+      SMTP_FROM: "newsletter@kcs.local"
+
+      # Next.js
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: 1
+    ports:
+      - "3001:3000"  # Port externe 3001 pour éviter les conflits
+    volumes:
+      - ./app/public/uploads:/app/public/uploads  # Persistance des uploads
+    networks:
+      - newsletter-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mailhog:
+        condition: service_started
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   # PostgreSQL Database
   postgres:
     image: postgres:15
