@@ -23,7 +23,7 @@ services:
       SMTP_PORT: 1025
       SMTP_USER: ""
       SMTP_PASSWORD: ""
-      SMTP_FROM: "newsletter@kcs.local"
+      SMTP_FROM: "info@zidani.org"
 
       # Next.js
       NODE_ENV: production
@@ -74,8 +74,8 @@ services:
     image: dpage/pgadmin4:latest
     container_name: newsletter-pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@newsletter-kcs.local
-      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_DEFAULT_EMAIL: info@zidani.org
+      PGADMIN_DEFAULT_PASSWORD: Besmillah2025
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     ports:
       - "5050:80"
